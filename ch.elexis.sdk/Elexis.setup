@@ -12,8 +12,8 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/SetupWorkingSets.ecore"
-    name="elexis"
-    label="Elexis">
+    name="jsigle-elexis-3-2026"
+    label="Elexis jsigle-elexis-3-2026">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="User Preferences">
@@ -155,7 +155,7 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.elexissetup"
-        value="=https://raw.githubusercontent.com/elexis/elexis-3-core/master/ch.elexis.sdk/Elexis.setup->${core.git.clone.location|uri}/ch.elexis.sdk/Elexis.setup"
+        value="=https://raw.githubusercontent.com/jsigle-elexis-3-2026/elexis-3-core/master/ch.elexis.sdk/Elexis.setup->${core.git.clone.location|uri}/ch.elexis.sdk/Elexis.setup"
         vm="true"/>
     <setupTask
         xsi:type="setup:ResourceCreationTask"
@@ -181,7 +181,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="core.git.clone"
-      remoteURI="elexis/elexis-3-core">
+      remoteURI="jsigle-elexis-3-2026/elexis-3-core">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
@@ -202,7 +202,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="base.git.clone"
-      remoteURI="elexis/elexis-3-base"
+      remoteURI="jsigle-elexis-3-2026/elexis-3-base"
       pushURI="">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -224,7 +224,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="server.git.clone"
-      remoteURI="elexis/elexis-server">
+      remoteURI="jsigle-elexis-3-2026/elexis-server">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
