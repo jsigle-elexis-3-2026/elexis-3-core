@@ -262,4 +262,7 @@ public class Preferences {
 	public static final String USR_REMINDER_ASSIGNED_TO_ME = "reminder/assignedToMe"; //$NON-NLS-1$
 	public static final String USR_REMINDERS_NOT_YET_DUE = "reminder/onlyopen"; //$NON-NLS-1$
 
+	// TODO: 20251230js re-added field for an office application dir from msword_js originally noatext/noatext_js possibly superfluous for msword_js
+	public static String P_OOBASEDIR;
+
 }
