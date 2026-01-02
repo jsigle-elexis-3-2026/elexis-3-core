@@ -125,6 +125,8 @@ public class Messages {
 	public static String BriefAuswahlCreateNewDocument = ch.elexis.core.l10n.Messages.BriefAuswahlCreateNewDocument;
 	public static String Core_Delete = ch.elexis.core.l10n.Messages.Core_Delete;
 	public static String Core_Delete_Document = ch.elexis.core.l10n.Messages.Core_Delete_Document;
+
+	public static String BriefAuswahlErrorHeading = ch.elexis.core.l10n.Messages.BriefAuswahlErrorHeading;
 	public static String BriefAuswahlDeleteConfirmText = ch.elexis.core.l10n.Messages.BriefAuswahlDeleteConfirmText;
 
 	public static String Core_Error = ch.elexis.core.l10n.Messages.Core_Error;
@@ -137,6 +139,7 @@ public class Messages {
 	public static String BriefAuswahlOpenLetterForEdit = ch.elexis.core.l10n.Messages.BriefAuswahlOpenLetterForEdit;
 	public static String BriefAuswahlRenameButtonText = ch.elexis.core.l10n.Messages.BriefAuswahlRenameButtonText;
 	public static String BriefAuswahlRenameDocument = ch.elexis.core.l10n.Messages.BriefAuswahlRenameDocument;
+	public static String BriefAuswahlStresstestAskForConfirmationBeforeRunning = ch.elexis.core.l10n.Messages.BriefAuswahlStresstestAskForConfirmationBeforeRunning;
 	public static String BriefAuswahlStressTestButtonText1 = ch.elexis.core.l10n.Messages.BriefAuswahlStressTestButtonText1;
 	public static String BriefAuswahlStressTestButtonText2 = ch.elexis.core.l10n.Messages.BriefAuswahlStressTestButtonText2;
 	public static String Core_Date = ch.elexis.core.l10n.Messages.Core_Date;
@@ -595,7 +598,7 @@ public class Messages {
 	public static String VerrechnungsDisplay_applyMedication = ch.elexis.core.l10n.Messages.VerrechnungsDisplay_applyMedication;
 	public static String VerrechnungsDisplay_indicatedMedication = ch.elexis.core.l10n.Messages.VerrechnungsDisplay_indicatedMedication;
 	public static String VerrechnungsDisplay_fixMedication = ch.elexis.core.l10n.Messages.VerrechnungsDisplay_fixMedication;
-	public static String BriefAuswahlNotAllowedToRunStresstess = ch.elexis.core.l10n.Messages.BriefAuswahlNotAllowedToRunStresstess;
+	public static String BriefAuswahlNotAllowedToRunStresstest = ch.elexis.core.l10n.Messages.BriefAuswahlNotAllowedToRunStresstest;
 	public static String ReminderView_txtSearch_message = ch.elexis.core.l10n.Messages.ReminderView_txtSearch_message;
 
 	public static String BestellView_WizardAskNewOrder = ch.elexis.core.l10n.Messages.BestellView_WizardAskNewOrder;

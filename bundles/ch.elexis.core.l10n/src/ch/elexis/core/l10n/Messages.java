@@ -544,13 +544,15 @@ public class Messages extends NLS {
 	public static String BriefAuswahlCouldNotLoadText;
 	public static String BriefAuswahlCreateNewDocument;
 	public static String BriefAuswahlDeleteConfirmText;
+	public static String BriefAuswahlErrorHeading;
 	public static String BriefAuswahlLoadButtonText;
 	public static String BriefAuswahlNewSubjectHeading;
 	public static String BriefAuswahlNewSubjectText;
-	public static String BriefAuswahlNotAllowedToRunStresstess;
+	public static String BriefAuswahlNotAllowedToRunStresstest;
 	public static String BriefAuswahlOpenLetterForEdit;
 	public static String BriefAuswahlRenameButtonText;
 	public static String BriefAuswahlRenameDocument;
+	public static String BriefAuswahlStresstestAskForConfirmationBeforeRunning;
 	public static String BriefAuswahlStressTestButtonText1;
 	public static String BriefAuswahlStressTestButtonText2;
 	public static String BriefAuswahl_actionlocaleditstopmessage;
