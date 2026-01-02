@@ -152,25 +152,51 @@ public class Brief extends PersistentObject {
 
 	/** Speichern als Text */
 	public boolean save(String cnt) {
+        System.out.println("Brief.java: Speichern als Text save() begins...");
 		return save(cnt.getBytes(), "txt");
 	}
 
 	/** Speichern in Binärformat */
 	public boolean save(byte[] in, String mimetype) {
-		try (ByteArrayInputStream inputStream = new ByteArrayInputStream(in)) {
-			IDocument iDocument = toIDocument();
-			iDocument.setMimeType(mimetype);
-			iDocument.setContent(inputStream);
-			CoreModelServiceHolder.get().save(iDocument);
-			return true;
-		} catch (IOException e) {
-			LoggerFactory.getLogger(getClass()).warn("Error saving content of Brief [{}]", getId(), e);
-		}
-		return false;
+        System.out.println("Brief.java: Speichern in Binaerformat save() begins...");
+        /*
+         * //202601021601js: Es braucht ZWINGEND diesen Test, ob (in != null) ist.
+         * 
+         * In der frueheren (einfacheren) Implementation mindestens bis 3.7 war der drin.
+         * Upstream hat den aber irgendwann entfernt, vielleicht in der Annahme, dass das nicht vorkommen wuerde,
+         * oder dass ein try... catch... das dann schon richten werde.
+         * 
+         * Der Ablauf hier versucht jedoch offenbar vor jedem Oeffnen eines Dokuments, ein potentiell noch vorhandenes frueheres zu speichern.
+         * Ab dem zweiten zu oeffnenden Brief ist in meinem Setup dann (in == null); aber save() wird trotzdem aufgerufen,
+         * und der test if (in != null) ... hat das seinerzeit einfach ohne Nebenwirkungen wieder zurueckkehren lassen.
+         * 
+         * Mit der neuen Implementation (vermutlich ab etwa 3.10..3.11..3.13 ??? fehlte jedoch diese Pruefung.
+         * In der Folge wirft das Oeffnen (!) des naechsten Briefes mindestens 3-mal einen Fehlerdialog -
+         * statt, wie es sein sollte, zwar hier kurz vorbeizuschauen - aber dann einfach still und leise umzukehren,
+         * weil es nichts zu speichern gibt, und sofort darauf den gewuenschten Brief zu oeffnen.
+         * 
+         * Nachdem ich die Pruefung hier wieder eingefuegt habe, funktioniert das alles wieder reibungslos.
+         * 
+         * Im Zuge des Debuggings dahin habe ich die System.out.println() Meldungen vor den verschiedenen Methoden von Brief.java ergaenzt.
+         * Wenn sich das alles (WIEDER! sic!) als langfristig stabil erweist, koennen diese auch irgendwann wieder entfernt werden.
+         */
+        if (in != null) {
+            try (ByteArrayInputStream inputStream = new ByteArrayInputStream(in)) {
+                IDocument iDocument = toIDocument();
+                iDocument.setMimeType(mimetype);
+                iDocument.setContent(inputStream);
+                CoreModelServiceHolder.get().save(iDocument);
+                return true;
+            } catch (IOException e) {
+                LoggerFactory.getLogger(getClass()).warn("Error saving content of Brief [{}]", getId(), e);
+            }
+        }
+        return false;
 	}
 
 	/** Binärformat laden */
 	public byte[] loadBinary() {
+        System.out.println("Brief.java: Binaerformat laden loadBinary() begins...");
 		byte[] content = null;
 		try (InputStream is = toIDocument().getContent()) {
 			content = IOUtils.toByteArray(is);
@@ -182,11 +208,13 @@ public class Brief extends PersistentObject {
 
 	/** Textformat laden */
 	public String read() {
+        System.out.println("Brief.java: Textformat laden read() begins...");
 		return new String(loadBinary());
 	}
 
 	/** Mime-Typ des Inhalts holen */
 	public String getMimeType() {
+        System.out.println("Brief.java: getMimeType() begins...");
 		String gm = get(FLD_MIME_TYPE);
 		if (StringTool.isNothing(gm)) {
 			return MIMETYPE_OO2;
