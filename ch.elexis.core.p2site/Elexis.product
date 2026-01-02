@@ -57,6 +57,8 @@
       <feature id="ch.elexis.core.persistence.feature" installMode="root"/>
       <feature id="ch.elexis.core.tasks.feature" installMode="root"/>
       <feature id="at.medevit.elexis.text.docx.feature" installMode="root"/>
+      <feature id="com.jsigle.msword_js.feature" installMode="root"/>
+      <feature id="ch.elexis.omnivore.feature" installMode="root"/>
    </features>
 
    <configurations>

@@ -587,7 +587,7 @@
        point="org.eclipse.core.runtime.products">
     <product
           application="ch.elexis.core.application.ElexisApp"
-          name="Elexis OpenSource jms">
+          name="Elexis OpenSource">
        <property
              name="windowImages"
              value="rsc/Elexis_icon16x16.png,rsc/Elexis_icon32x32.png,rsc/Elexis_icon48x48.png,rsc/Elexis_icon64x64.png,rsc/Elexis_icon128x128.png,rsc/Elexis_icon.png">
@@ -602,7 +602,7 @@
        </property>
        <property
              name="appName"
-             value="Elexis OpenSource jms">
+             value="Elexis OpenSource">
        </property>
        <property
         name="rendererFactoryUri"
