@@ -45,11 +45,17 @@
 								<id>javax.transaction</id>
 								<versionRange>0.0.0</versionRange>
 							</requirement>
+							<!-- 202512230430js removed this trying to avoid Cycle during Classpath generation hindering exports,
+							     but that does apparently NOT solve the problem.
+							     The attempt was inspired by the elexis-3-core/remove_requirements.sh script
+							     and org.eclipse.persistence.oracle appearing in the error message.
+							     Changed removal into commenting this xml tag out; so it can be easily spotted and undone. /js 
 							<requirement>
 								<type>eclipse-plugin</type>
 								<id>org.eclipse.persistence.oracle</id>
 								<versionRange>0.0.0</versionRange>
 							</requirement>
+							-->
 							<requirement>
 								<type>eclipse-plugin</type>
 								<id>ch.qos.logback.slf4j</id>
